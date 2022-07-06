@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShareLink</title>
+    <script
+      src="https://kit.fontawesome.com/1610bf3bf1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const baseURL = "<%= baseURL %>";
+    </script>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <section class="upload-container">
+      <form action="" id="file-form">
+        <div class="drop-zone">
+          <div class="icon-container">
+            <img
+              src="/resources/file.svg"
+              class="center"
+              draggable="false"
+              alt="File icon"
+            />
+            <img
+              src="/resources/file.svg"
+              class="left"
+              draggable="false"
+              alt="File icon"
+            />
+            <img
+              src="/resources/file.svg"
+              class="right"
+              draggable="false"
+              alt="File icon"
+            />
+          </div>
+
+          <input class="hidden" type="file" id="file-input" name="file" />
+          <div class="text-lg">
+            Drop your file here or, <span id="browse-btn">browse</span>
+          </div>
+        </div>
+      </form>
+
+      <div class="progress-container">
+        <div class="bg-progress"></div>
+
+        <div class="inner-container">
+          <div class="status">Uploading...</div>
+          <div class="percent-container">
+            <span id="progress-percent">0</span>%
+          </div>
+          <div class="progress-bar"></div>
+        </div>
+      </div>
+
+      <div class="sharing-container">
+        <p>Link expires in less than 24 hrs</p>
+
+        <div class="input-container">
+          <input type="text" id="file-url" readonly />
+          <img src="/resources/copy-icon.svg" id="copy-btn" alt="Copy to clipboard icon" />
+        </div>
+
+        <p class="email-info">Or Send via Email</p>
+        <div class="email-container">
+          <form action="" id="email-form">
+            <div class="filed">
+              <label for="fromEmail">Your Email</label>
+              <input
+                type="email"
+                autocomplete="email"
+                name="fromEmail"
+                id="fromEmail"
+                required
+              />
+            </div>
+
+            <div class="filed">
+              <label for="toEmail">Recipient's Email</label>
+              <input
+                type="email"
+                autocomplete="email"
+                name="toEmail"
+                id="toEmail"
+                required
+              />
+            </div>
+
+            <div class="send-btn-container">
+              <button type="submit">Send</button>
+            </div>
+          </form>
+          s
+        </div>
+      </div>
+    </section>
+    <div class="image-vector"></div>
+    <div class="toast"></div>
+
+    <script src="/js/index.js"></script>
+  </body>
+</html>

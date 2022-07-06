@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/1610bf3bf1.js" crossorigin="anonymous"></script>
+    <title>Download | ShareLink | File sharing made easy</title>
+</head>
+<body class="bg-[#edf5fe] overflow-hidden flex justify-center self-center text-[#333]">
+    <div class="flex">
+        <i class="fa-solid fa-file-export align-middle"></i>
+        <h1 class="text-lg text-bold">ShareLink</h1>
+    </div>
+    
+    <section class="bg-white w-[450px] max-w-[90%] rounded-[25px] shadow-xl shadow-[#00000017] text-center p-8">
+        <img class="h-32" src="/resources/download.svg" alt="download">
+
+        <% if (locals.error) { %>
+            <p class="text-red-500 text-center">
+                <%= locals.error %>
+            </p>
+        <% } else { %>
+            <h2>Your file is ready to download.</h2>
+            <p>Link expires in less than 24 hours.</p>
+            <div>
+                <h4 class="mb-0 leading-snug">
+                    <%= filename %>
+                </h4>
+                <small>
+                    <%= parseInt(size / 1024 ) %> KB
+                </small>
+            </div>
+            <div class="inline-block text-lg px-2 py-10 mt-4 bg-blue-400 hover:bg-blue-600 text-white cursor-pointer rounded-md transition-all ease-in-out">
+                <a href="<%= download %>">Download</a>
+            </div>
+        <% } %>
+    </section>
+
+</body>
+</html>

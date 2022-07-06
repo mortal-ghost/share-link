@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShareLink</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/1610bf3bf1.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-[#edf5fe]">
+    <div class="flex px-4 pt-2 pb-1">
+        <i class="fa-solid fa-file-export self-center scale-125 mx-1"></i>
+        <h1 class="text-4xl text-extabold">ShareLink</h1>
+    </div>
+
+    <div class="flex h-[94vh] justify-center">
+        <div class="border-2 border-dashed self-center rounded-2xl bg-white p-8 md:w-1/2 items-center m-2 flex flex-col justify-center">
+            <img width="200px" src="/resources/file.svg">
+
+            <div class="mt-4 mb-1">
+                <h2 class="text-2xl">
+                    Select a file to share
+                </h2>
+            </div>
+            <form action="/api/files" enctype="multipart/form-data" class="flex flex-col justify-center items-center text-sm" method="post">
+                <input type="file" name="file" class="ml-[75px]" id="file-input" required>
+ 
+                <button class="mt-4 w-[150px] bg-[#0b8bf3] hover:bg-blue-700 text-white py-2 px-4 rounded-lg" type="submit">
+                    Upload
+                </button>
+            </form>
+
+        </div>
+
+        <div class="w-full self-center md:block hidden">
+            <img src="/resources/undraw-upload.svg" alt="uncover-upload">
+        </div>
+    </div>
+</body>
+</html>

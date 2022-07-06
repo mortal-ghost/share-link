@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/1610bf3bf1.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>ShareLink | File Sharing made easy</title>
+  </head>
+  <body class="bg-[#EDF5FE]">
+    <div class="flex px-4 pt-2 pb-1">
+      <i class="fa-solid fa-file-export self-center scale-125 mx-1"></i>
+      <h1 class="text-4xl text-extabold">ShareLink</h1>
+    </div>
+
+    <div class="flex h-[94vh] justify-center">
+      <div
+        class="border-2 border-dashed self-center rounded-2xl bg-white p-8 md:w-1/2 items-center m-2 flex flex-col justify-center"
+      >
+        <div class="mb-6">
+          <img src="/resources/file.svg" width="200px" />
+        </div>
+        <div class="flex w-full justify-center">
+          <input
+            type="text"
+            id="file-url"
+            class="w-full max-w-xl mx-1 border-2 p-1 rounded-lg"
+            value="<%= url %>"
+            readonly
+          />
+          <img
+            src="/resources/copy-icon.svg"
+            class="cursor-pointer"
+            id="copy-btn"
+            alt="Copy to clipboard icon"
+          />
+        </div>
+        <p id="copy-status" class="text-sm"></p>
+        <p>Link expires in less than 24 hours.</p>
+
+        <p class="my-4 text-gray-500">OR</p>
+
+        <p class="mb-2 text-lg">Share via email</p>
+
+        <div class="border border-blue-400 rounded-lg p-4">
+          <form id="email-form" class="place-items-center">
+            <div class="flex">
+                <label for="from-email" class="text-lg self-end w-[20%]">From</label>
+                <input
+                  id="from-email"
+                  type="email"
+                  class="w-full max-w-xl mx-1 border-b-2  border-blue-500 p-1"
+                  name="emailFrom"
+                  required
+                />
+            </div>
+
+            <div class="flex">
+                <label for="to-email" class="text-lg self-end w-[20%]">To</label>
+                <input
+                  id="to-email"
+                  type="email"
+                  class="w-full max-w-xl mx-1 border-b-2 border-blue-500 p-1"
+                  name="emailTo"
+                  required
+                />
+            </div>
+            
+            <div class="flex justify-center mt-2">
+                <button
+                  id="email-btn"
+                  type="submit"
+                  class="mt-4 w-[150px] bg-[#0B8BF3] hover:bg-blue-700 text-white py-2 px-4 text-center rounded-lg"
+                > Send Email
+                </button>
+            </div>
+          </form>
+          <p id="email-status" class="text-sm my-1"></p>
+        </div>
+      </div>
+
+      <div class="w-fit self-center md:block hidden">
+        <img src="/resources/undraw-upload.svg" alt="uncover-upload" />
+      </div>
+    </div>
+    <script src="/js/share.js"></script>
+  </body>
+</html>
